@@ -5,11 +5,17 @@
 
 #include "ThingSpeak.h"
 #include "secrets.h"
+#include <ESP8266WiFi.h>
+
+#include <Adafruit_GFX.h>
+#include <Adafruit_ST7735.h> 
+#define TFT_RST   D4
+#define TFT_CS    D3
+#define TFT_DC    D2
 
 unsigned long myChannelNumber = SECRET_CH_ID;
+const char * myWriteAPIKey = SECRET_WRITE_APIKEY;
 const char * myReadAPIKey = SECRET_READ_APIKEY;
-
-#include <ESP8266WiFi.h>
 
 char ssid[] = SECRET_SSID;   // network SSID
 char pass[] = SECRET_PASS;   // network password

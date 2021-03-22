@@ -21,6 +21,7 @@ Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
 
 unsigned long myChannelNumber = SECRET_CH_ID;
 const char * myWriteAPIKey = SECRET_WRITE_APIKEY;
+const char * myReadAPIKey = SECRET_READ_APIKEY;
 
 char ssid[] = SECRET_SSID;   // network SSID
 char pass[] = SECRET_PASS;   // network password
@@ -104,20 +105,20 @@ void loop() {
   if (statePrev.equals("00")) {
     if (stateNew.equals("01")) {
       digitalWrite(gridRelay, HIGH);
-    } else if (sateNew.equals("10")) {
+    } else if (stateNew.equals("10")) {
       digitalWrite(batteryRelay, HIGH);
     }
   } else if (statePrev.equals("01")) {
     if (stateNew.equals("00")) {
       digitalWrite(gridRelay, LOW);
-    } else if (sateNew.equals("10")) {
+    } else if (stateNew.equals("10")) {
       digitalWrite(batteryRelay, HIGH);
       digitalWrite(gridRelay, LOW);
     }
   } else if (statePrev.equals("10")) {
     if (stateNew.equals("00")) {
       digitalWrite(batteryRelay, LOW);
-    } else if (sateNew.equals("01")) {
+    } else if (stateNew.equals("01")) {
       digitalWrite(gridRelay, HIGH);
       digitalWrite(batteryRelay, LOW);
     }
