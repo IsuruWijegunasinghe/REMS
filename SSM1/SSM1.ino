@@ -45,9 +45,9 @@ void setup() {
 
   ThingSpeak.begin(client);
 
-  pinMode (aca712, INPUT);
-  pinMode (batteryRelay, OUTPUT);
-  pinMode (gridRelay, OUTPUT);
+  pinMode(aca712, INPUT);
+  pinMode(batteryRelay, OUTPUT);
+  pinMode(gridRelay, OUTPUT);
 
   tft.initR(INITR_BLACKTAB);
   tft.fillScreen(ST7735_WHITE);
